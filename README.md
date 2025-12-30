@@ -1,16 +1,77 @@
-# React + Vite
+# Quad 🕶️  
+*A low-key, college-only marketplace.*
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Quad is a request-based campus marketplace built for students — no payments, no commissions, no noise.  
+Buyers browse, sellers list, and deals happen **offline** at a mutually agreed place.
 
-Currently, two official plugins are available:
+Designed to feel minimal, underground, and intentional.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🔐 Authentication
+- Google sign-in (Firebase Auth)
+- One account = buyer + seller access
 
-## Expanding the ESLint configuration
+### 🛒 Marketplace
+- Real-time listings (Firestore)
+- Mandatory product image for every listing
+- Price shown upfront
+- No in-app payments
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 📸 Images (No Firebase Billing)
+- Camera opens directly on mobile
+- Auto image compression (~200–250 KB)
+- Hosted on Cloudinary (free tier)
+- Blurred thumbnails for buyers (revealed on interaction)
+
+### 🔁 Request Flow
+- Buyer sends **request to buy**
+- Seller receives request in dashboard
+- Seller accepts and shares meetup details
+- Listing marked as sold
+
+### 🎭 UI / UX
+- Editorial, minimal design
+- Subtle scroll + hover animations
+- Animated list transitions
+- Intentional “chor-bazaar” vibe
+
+---
+
+## 🧠 How It Works (Flow)
+
+1. User signs in with Google
+2. Seller posts a listing (image mandatory)
+3. Buyer browses available listings
+4. Buyer clicks **Take** → request sent
+5. Seller accepts request
+6. Buyer & seller meet offline and complete the deal
+
+---
+
+## 🧱 Tech Stack
+
+- **Frontend**: React + Vite  
+- **Auth**: Firebase Authentication  
+- **Database**: Cloud Firestore  
+- **Images**: Cloudinary (unsigned uploads)  
+- **Animations**: Motion  
+- **Hosting**: (planned)
+
+---
+
+## 📂 Project Structure
+
+```txt
+src/
+├── components/
+│   └── AnimatedList.jsx
+├── pages/
+│   ├── BuyerDashboard.jsx
+│   ├── SellerDashboard.jsx
+│   └── Auth.jsx
+├── firebase.js
+└── App.jsx
+
