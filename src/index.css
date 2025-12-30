@@ -1,0 +1,88 @@
+/* ---------- RESET ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- THEME ---------- */
+:root {
+  --bg-main: #0f0f0f;
+  --bg-soft: #141414;
+  --text-main: #eae7e2;
+  --text-muted: #9a9a9a;
+  --accent: #d4b106;
+  --border-soft: #242424;
+}
+
+/* ---------- BASE ---------- */
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 500px at top, #1b1b1b 0%, #121212 40%, #0f0f0f 100%);
+  color: var(--text-main);
+  font-family: "Space Grotesk", system-ui, -apple-system;
+  line-height: 1.45;
+}
+
+/* ---------- TEXT ---------- */
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0;
+}
+
+/* ---------- BUTTONS ---------- */
+button {
+  font-family: inherit;
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  cursor: pointer;
+  padding: 0;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes softGlow {
+  from {
+    color: var(--text-main);
+  }
+  to {
+    color: var(--accent);
+  }
+}
+
+.reveal {
+  animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+
+/* ---------- INTERACTION ---------- */
+.linkish {
+  transition: color 0.3s ease;
+}
+
+.linkish:hover {
+  color: var(--accent);
+}
